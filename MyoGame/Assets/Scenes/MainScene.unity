@@ -615,7 +615,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   myo: {fileID: 611047661}
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 1592857183700250, guid: 1af4ac3f84e215f4d82b651b7e3fc152, type: 2}
+  timeBetweenShots: 3
+  startTimeBetweenShots: 0
 --- !u!50 &1414904838
 Rigidbody2D:
   serializedVersion: 4

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour {
     public GameObject myo = null;
     private Quaternion _antiYaw = Quaternion.identity;
     public GameObject Bullet;
+    public float timeBetweenShots;
+    public float startTimeBetweenShots;
 
     void Move(){
 
@@ -41,10 +43,17 @@ public class Player : MonoBehaviour {
 
     void ShootBullet(){
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
-        if (thalmicMyo.pose == Pose.Fist){
-            Instantiate(Bullet, transform.position, Quaternion.identity);
+        if (timeBetweenShots <= 0){
+
+            if (thalmicMyo.pose == Pose.Fist){
+
+                Instantiate(Bullet, transform.position, Quaternion.identity);
+                timeBetweenShots = startTimeBetweenShots;
+            }
+        }else{
+            timeBetweenShots -= Time.deltaTime;
         }
-    }
+    }   
     
 
 void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo){

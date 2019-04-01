@@ -36,6 +36,9 @@ public class ColorBoxByPose : MonoBehaviour
         // detected, pose will be set to Pose.Rest. If pose detection is unavailable, e.g. because Myo
         // is not on a user's arm, pose will be set to Pose.Unknown.
         if (thalmicMyo.pose != _lastPose) {
+
+            var renderer = GetComponent<Renderer>();
+
             _lastPose = thalmicMyo.pose;
 
             // Vibrate the Myo armband when a fist is made.

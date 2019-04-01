@@ -20,15 +20,23 @@ public class Player : MonoBehaviour {
         // GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal, 0) * speed;
 
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
-        if (dead == false){ 
+        if (dead == false){
             if (thalmicMyo.pose == Pose.WaveOut){
 
-               transform.position += Vector3.right * speed * Time.deltaTime;
-     
-               ExtendUnlockAndNotifyUserAction(thalmicMyo);
+                transform.position += Vector3.right * speed * Time.deltaTime;
+
+                ExtendUnlockAndNotifyUserAction(thalmicMyo);
+            }
+
+            else if (thalmicMyo.pose == Pose.WaveIn){
+
+                transform.position += Vector3.left * speed * Time.deltaTime;
+
+                ExtendUnlockAndNotifyUserAction(thalmicMyo);
             }
         }
- }
+    }
+    
 
 void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo){
         ThalmicHub hub = ThalmicHub.instance;

@@ -14,13 +14,14 @@ public class Player : MonoBehaviour {
     public GameObject myo = null;
     private Quaternion _antiYaw = Quaternion.identity;
     public GameObject Bullet;
+
     void Move(){
 
         // float moveHorizontal = Input.GetAxis("Horizontal");
 
         // GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal, 0) * speed;
-
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
+
         if (dead == false){
             if (thalmicMyo.pose == Pose.WaveOut){
 
@@ -39,7 +40,8 @@ public class Player : MonoBehaviour {
     }
 
     void ShootBullet(){
-        if (Input.GetButtonDown("Jump")){
+        ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
+        if (thalmicMyo.pose == Pose.Fist){
             Instantiate(Bullet, transform.position, Quaternion.identity);
         }
     }

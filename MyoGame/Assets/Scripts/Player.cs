@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
     private bool dead = false;
     public GameObject myo = null;
     private Quaternion _antiYaw = Quaternion.identity;
+    public GameObject Bullet;
     void Move(){
 
         // float moveHorizontal = Input.GetAxis("Horizontal");
@@ -36,6 +37,12 @@ public class Player : MonoBehaviour {
             }
         }
     }
+
+    void ShootBullet(){
+        if (Input.GetButtonDown("Jump")){
+            Instantiate(Bullet, transform.position, Quaternion.identity);
+        }
+    }
     
 
 void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo){
@@ -56,7 +63,7 @@ void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo){
 	// Update is called once per frame
 	void Update () {
         Move();
-
+        ShootBullet();
         
     }
 }

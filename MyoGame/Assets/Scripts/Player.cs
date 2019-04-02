@@ -19,9 +19,9 @@ public class Player : MonoBehaviour {
 
     void Move(){
 
-        // float moveHorizontal = Input.GetAxis("Horizontal");
+         float moveHorizontal = Input.GetAxis("Horizontal");
 
-        // GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal, 0) * speed;
+         GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal, 0) * speed;
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
 
         if (dead == false){
@@ -44,8 +44,8 @@ public class Player : MonoBehaviour {
     void ShootBullet(){
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
         if (timeBetweenShots <= 0){
-
-            if (thalmicMyo.pose == Pose.Fist){
+            if (Input.GetButtonDown("Jump")){ 
+           // if (thalmicMyo.pose == Pose.Fist){
 
                 Instantiate(Bullet, transform.position, Quaternion.identity);
                 timeBetweenShots = startTimeBetweenShots;

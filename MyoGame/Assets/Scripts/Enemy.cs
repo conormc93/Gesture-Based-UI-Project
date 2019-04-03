@@ -6,6 +6,11 @@ public class Enemy : MonoBehaviour {
 
     public float speed = 30;
     public Rigidbody2D rigidBody;
+    public GameObject enemyBullet;
+
+    public float minFireRateTime = 1.0f;
+    public float maxFireRateTime = 3.0f;
+    public float baseFireWaitTime = 3.0f;
 
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.name == "VerticalWallRight"){
@@ -27,10 +32,20 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         rigidBody = GetComponent<Rigidbody2D>();
         rigidBody.velocity = new Vector2(1, 0) * speed;
+
+        baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void FixedUpdate(){
+        if(Time.time > baseFireWaitTime){
+            baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
+
+            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

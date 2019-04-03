@@ -15,10 +15,12 @@ public class Enemy : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.name == "VerticalWallRight"){
             Turn(-1);
+            Advance();
             print("2");
         }
         if (col.gameObject.name == "VerticalWallLeft"){
             Turn(1);
+            Advance();
         }
     }
     
@@ -26,6 +28,12 @@ public class Enemy : MonoBehaviour {
         Vector2 Velocity = rigidBody.velocity;
         Velocity.x = speed * direction;
         rigidBody.velocity = Velocity;
+    }
+
+    void Advance(){
+        Vector2 position = transform.position;
+        position.y -= 1;
+        transform.position = position;
     }
 
 	// Use this for initialization

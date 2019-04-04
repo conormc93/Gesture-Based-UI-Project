@@ -23,6 +23,11 @@ public class AudioManager : MonoBehaviour {
         AudioSource source = GetComponent<AudioSource>();
         soundEffect = source;
 	}
+
+    public void PlayOneShot(AudioClip clip){
+
+        soundEffect.PlayOneShot(clip);
+    }
 	
 	// Update is called once per frame
 	void Update () {

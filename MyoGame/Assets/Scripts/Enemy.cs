@@ -12,6 +12,11 @@ public class Enemy : MonoBehaviour {
     public float maxFireRateTime = 3.0f;
     public float baseFireWaitTime = 3.0f;
 
+    public float minDropRateTime = 1.0f;
+    public float maxDropRateTime = 3.0f;
+    public float baseDropWaitTime = 3.0f;
+    public GameObject powerUp;
+
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.name == "VerticalWallRight"){
             Turn(-1);
@@ -45,12 +50,19 @@ public class Enemy : MonoBehaviour {
 	}
 
     void FixedUpdate(){
-        if(Time.time > baseFireWaitTime){
+
+        if (Time.time > baseFireWaitTime){
             baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
 
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
             AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.alienBlast);
 
+        }
+        if(Time.time > baseDropWaitTime){
+            baseDropWaitTime = baseDropWaitTime + Random.Range(minDropRateTime, maxDropRateTime);
+
+            Instantiate(powerUp, transform.position, Quaternion.identity);
+            
         }
     }
 

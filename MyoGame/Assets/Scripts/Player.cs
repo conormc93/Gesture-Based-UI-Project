@@ -49,6 +49,8 @@ public class Player : MonoBehaviour {
 
                 Instantiate(Bullet, transform.position, Quaternion.identity);
                 timeBetweenShots = startTimeBetweenShots;
+
+                SoundManager.Instance.PlayOneShot(SoundManager.Instance.bulletFire);
             }
         }else{
             timeBetweenShots -= Time.deltaTime;

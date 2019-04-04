@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip laserBlast;
     public AudioClip splashScreen;
     public AudioClip powerUp;
+    public AudioClip alienBlast;
 
     private AudioSource soundEffect;
 

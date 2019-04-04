@@ -49,6 +49,8 @@ public class Enemy : MonoBehaviour {
             baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
 
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.alienBlast);
+
         }
     }
 

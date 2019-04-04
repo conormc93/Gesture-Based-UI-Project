@@ -141,9 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299026341791e574da530fae4e17f0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserBlast: {fileID: 0}
-  splashScreen: {fileID: 0}
-  powerUp: {fileID: 0}
+  laserBlast: {fileID: 8300000, guid: 08ac5bb17936e3248a57523755a920c1, type: 3}
+  splashScreen: {fileID: 8300000, guid: dba5142b1aeaace4fbf0076a7abd2160, type: 3}
+  powerUp: {fileID: 8300000, guid: 2a7733aca30db0b4eab48efc5f2ec166, type: 3}
+  alienBlast: {fileID: 8300000, guid: a8e768b30df731648bc162397b642a12, type: 3}
 --- !u!82 &10338686
 AudioSource:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - EnemyBullet
   - PowerUp
+  - BonusPoint
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemy
   - EnemyBullet
   - PowerUp
-  - 
+  - BonusPoint
   - 
   - 
   - 

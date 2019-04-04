@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PowerUp : MonoBehaviour {
+public class BonusPoints : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider){
 
@@ -14,8 +15,19 @@ public class PowerUp : MonoBehaviour {
     void PickUp(){
 
         Debug.Log("Power Up");
-
+        IncreaseScore();
         Destroy(gameObject);
+    }
+
+    void IncreaseScore(){
+
+        var scoreText = GameObject.Find("Score").GetComponent<Text>();
+
+        int score = int.Parse(scoreText.text);
+        score += 1;
+
+        scoreText.text = score.ToString();
+
     }
 
     // Use this for initialization

@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip powerUp;
     public AudioClip alienBlast;
     public AudioClip playerDeath;
+    public AudioClip enemyDeath;
 
     private AudioSource soundEffect;
 

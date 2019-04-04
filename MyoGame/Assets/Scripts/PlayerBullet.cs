@@ -22,6 +22,7 @@ public class PlayerBullet : MonoBehaviour {
         if(col.tag == "Enemy"){
             Destroy(gameObject);
             Destroy(col.gameObject, 0.5f);
+            AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
         }
     }
 

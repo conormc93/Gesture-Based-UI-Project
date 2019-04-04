@@ -145,6 +145,8 @@ MonoBehaviour:
   splashScreen: {fileID: 8300000, guid: dba5142b1aeaace4fbf0076a7abd2160, type: 3}
   powerUp: {fileID: 8300000, guid: 2a7733aca30db0b4eab48efc5f2ec166, type: 3}
   alienBlast: {fileID: 8300000, guid: a8e768b30df731648bc162397b642a12, type: 3}
+  playerDeath: {fileID: 8300000, guid: 2693edbe640ca834faba94f1a302e567, type: 3}
+  enemyDeath: {fileID: 8300000, guid: 658b80cc06ae33f428eb22810558ba0f, type: 3}
 --- !u!82 &10338686
 AudioSource:
   m_ObjectHideFlags: 0

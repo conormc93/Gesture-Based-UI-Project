@@ -5,11 +5,10 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour {
 
     private Rigidbody2D rigidBody;
-
     public float speed = 30;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rigidBody = GetComponent<Rigidbody2D>();
 
         rigidBody.velocity = Vector2.down * speed;

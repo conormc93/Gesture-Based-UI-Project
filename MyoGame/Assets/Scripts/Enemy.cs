@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour {
     public float minDropRateTime = 1.0f;
     public float maxDropRateTime = 3.0f;
     public float baseDropWaitTime = 3.0f;
-    public GameObject powerUp;
+    public GameObject bonusPoints;
+
 
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.name == "VerticalWallRight"){
@@ -47,7 +48,8 @@ public class Enemy : MonoBehaviour {
         rigidBody.velocity = new Vector2(1, 0) * speed;
 
         baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
-	}
+        baseDropWaitTime = baseDropWaitTime + Random.Range(minDropRateTime, maxDropRateTime);
+    }
 
     void FixedUpdate(){
 
@@ -61,7 +63,7 @@ public class Enemy : MonoBehaviour {
         if(Time.time > baseDropWaitTime){
             baseDropWaitTime = baseDropWaitTime + Random.Range(minDropRateTime, maxDropRateTime);
 
-            Instantiate(powerUp, transform.position, Quaternion.identity);
+            Instantiate(bonusPoints, transform.position, Quaternion.identity);
             
         }
     }

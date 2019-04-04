@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour
 {
+    public int Speed = 60;
 
     void OnTriggerEnter2D(Collider2D collider){
 
@@ -16,8 +17,7 @@ public class PowerUp : MonoBehaviour
     void PickUp(){
 
         Debug.Log("Power Up");
-        
-
+        Player.speed = Speed;
 
         Destroy(gameObject);
     }

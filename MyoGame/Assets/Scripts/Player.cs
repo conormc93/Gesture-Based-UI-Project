@@ -10,7 +10,7 @@ using VibrationType = Thalmic.Myo.VibrationType;
 public class Player : MonoBehaviour
 {
 
-    public float speed = 20;
+    public static float speed = 20;
     private bool dead = false;
     public GameObject myo = null;
     private Quaternion _antiYaw = Quaternion.identity;

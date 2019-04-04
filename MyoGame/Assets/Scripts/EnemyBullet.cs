@@ -23,6 +23,7 @@ public class EnemyBullet : MonoBehaviour {
         if(col.gameObject.tag == "Player"){
             Destroy(gameObject);
             Destroy(col.gameObject, 0.5f);
+            AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.playerDeath);
         }
 
     }

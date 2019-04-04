@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip splashScreen;
     public AudioClip powerUp;
     public AudioClip alienBlast;
+    public AudioClip playerDeath;
 
     private AudioSource soundEffect;
 

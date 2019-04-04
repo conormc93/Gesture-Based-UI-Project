@@ -7,10 +7,11 @@ public class PlayerBullet : MonoBehaviour {
 
     public float speed = 30;
     public Rigidbody2D rigidBody;
+    public GameObject powerUp;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rigidBody = GetComponent<Rigidbody2D>();
         rigidBody.velocity = Vector2.up * speed;
 	}
@@ -25,6 +26,14 @@ public class PlayerBullet : MonoBehaviour {
             Destroy(col.gameObject, 0.5f);
             IncreaseScore();
             AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
+        }
+        if(col.tag == "BonusEnemy"){
+
+            Destroy(gameObject);
+            Destroy(col.gameObject, 0.5f);
+            IncreaseScore();
+            AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
+            Instantiate(powerUp, transform.position, Quaternion.identity);
         }
     }
 

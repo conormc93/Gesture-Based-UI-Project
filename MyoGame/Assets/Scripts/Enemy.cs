@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
     public float baseDropWaitTime = 3.0f;
     public GameObject bonusPoints;
 
+
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.name == "VerticalWallRight"){
             Turn(-1);
@@ -47,7 +48,8 @@ public class Enemy : MonoBehaviour {
         rigidBody.velocity = new Vector2(1, 0) * speed;
 
         baseFireWaitTime = baseFireWaitTime + Random.Range(minFireRateTime, maxFireRateTime);
-	}
+        baseDropWaitTime = baseDropWaitTime + Random.Range(minDropRateTime, maxDropRateTime);
+    }
 
     void FixedUpdate(){
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBullet : MonoBehaviour {
 
@@ -22,12 +23,24 @@ public class PlayerBullet : MonoBehaviour {
         if(col.tag == "Enemy"){
             Destroy(gameObject);
             Destroy(col.gameObject, 0.5f);
+            IncreaseScore();
             AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
         }
     }
 
     void OnBecomeInvisible(){
         Destroy(gameObject);
+    }
+
+    void IncreaseScore(){
+
+        var scoreText = GameObject.Find("Score").GetComponent<Text>();
+
+        int score = int.Parse(scoreText.text);
+        score += 10;
+
+        scoreText.text = score.ToString();
+
     }
 	
 	// Update is called once per frame

@@ -65,9 +65,7 @@ public class Player : MonoBehaviour
             {
                 timeBetweenShots -= Time.deltaTime;
             }
-    }
-    
-
+    }    
 
     void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo)
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
@@ -50,9 +51,9 @@ public class Player : MonoBehaviour
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
         if (timeBetweenShots <= 0)
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-               // if (thalmicMyo.pose == Pose.Fist){
+       //     if (Input.GetButtonDown("Jump"))
+       //     {
+                if (thalmicMyo.pose == Pose.Fist){
 
                     Instantiate(Bullet, transform.position, Quaternion.identity);
                     timeBetweenShots = startTimeBetweenShots;
@@ -92,5 +93,5 @@ public class Player : MonoBehaviour
 
     }
 }
-
+    
 

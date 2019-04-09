@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
 
-    public int Health = 3;
+    public int Health = 2;
 
     // Update is called once per frame
     void Update()

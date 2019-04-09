@@ -25,7 +25,7 @@ public class EnemyBullet : MonoBehaviour {
         }
         if(col.gameObject.tag == "Player"){
             player.SendMessage("TakeDamage", damage);
-            Destroy(gameObject);
+           // Destroy(gameObject);
      
             AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.playerDeath);
         }

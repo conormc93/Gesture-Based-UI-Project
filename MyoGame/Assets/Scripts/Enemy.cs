@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
         if (col.gameObject.name == "VerticalWallRight"){
             Turn(-1);
             Advance();
-            print("2");
+           
         }
         if (col.gameObject.name == "VerticalWallLeft"){
             Turn(1);

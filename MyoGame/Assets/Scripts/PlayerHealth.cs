@@ -39,7 +39,10 @@ public class PlayerHealth : MonoBehaviour
             if (i < numOfHearts)
             {
                 //Heart of index i to be visable
-                hearts[i].enabled = true;
+
+                
+                    hearts[i].enabled = true;
+                
             }
             else
             {

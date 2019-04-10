@@ -14,8 +14,17 @@
 
 ---
 
-#### Introduction
+#### Brief
 "Develop an application with a Natural User Interface.  There are a number of options available to you and this is an opportunity to combine a lot of technology that you have worked with over the past four years...At the very least, this should be a local implementation of the application using gestures to interact with it...You can reproduce a classic game or system using a gesture-based interface."
+
+##### Introduction
+We decided to recreate the classic arcade game **Space Invaders** for the purpose of this project. The reason we decided to make this game is because:
+
+- We both have experience in creating this type of game using C# & Unity
+- The keyboard controls used throughout the game can be easily mapped to Myo gestures
+- This would allow us to focus more on the functionality of the hardware component and furthermore, allow us to better determine its performance and integration with Unity and our game.
+
+One  of  the  most  important  research  areas  in  the  field  of  Human-Computer-Interaction (HCI) is gesture  recognition  as  it  provides  a  natural  and  intuitive  way  to  communicate between  people  and  machines. Gesture-based  HCI  applications  range  from  computer games to virtual/augmented reality and is recently being explored in other fields.
 
 ---
 
@@ -52,14 +61,47 @@ __The menu can also be interacted with using these features.__
 
 ---
 #### Hardware used in creating the application
-The hardware we chose for our application is the [Myo Armband](https://www.myo.com/). We choose to use the this hardware as it is a top of the range gesture control armband. The myo armband was also available to us in college, so that made it even more attractive to use.
+Before we decided what hardware we wanted to use for our project we began researching the different options readily available to us to use.
+
+- Leap Motion Controller
+- Myo Armband
+- Kinect
+
+Below are some comparisons we drew up to determine which device would best fit the solution we were trying to implement.
+
+| Leap Motion Controller |   Myo Armband   |   Microsoft Kinect   |
+|:----------------------:|:---------------:|:--------------------:|
+| Finger Tracking        | Fixed Gestures  | Full Body Tracking   |
+| HMD Mountable          | Wireless        | High Latency         |
+| 3D Hand Tracking       | 2D Arm Tracking | Useful At A Distance |
+
+All three are NUI's and don't require any remote to control them as they all use markerless technologies. 
+
+##### Myo Armband
+The hardware we chose for our application is the [Myo Armband](https://www.myo.com/). We choose to use this as it is a top of the range gesture control armband. The myo armband was also available to us in the college, so that made it even more attractive to use. 
+
+The Myo armband can  be  used  in  numerous  applications due to its excellent technical features and  ease  of  use. The  EMG  electrodes  detect  the  signals  related  to  muscles  activity  of  the  user’s  forearm  and  the  IMU detects the forearm movements in the 3D space. The acquired data are sent, via the Bluetooth  Low  Energy  (BLE)  module  embedded  into  the  armband,  to  other  electronic  devices  (actuators,  microcontrollers,  and  so  on),  which  perform  specif-ic  functions  depending  on  the  received  data  and  on  their installed software.
 
 List of hardware components:
 1. Myo Armband
-2. Myo sizing clips
-3. Windows PC/Laptop or Mac( Windows Virtual Machine )
+2. 8 electromyographic (EMG) electrodes
+3. 9-axes inertial measurement unit (IMU)  
+    - 3-axes  gyroscope
+    - 3-axes  accelerometer
+    - 3-axes  magnetometer
+4. Myo sizing clips
+5. Bluetooth module
+6. Windows PC/Laptop or Mac( Windows Virtual Machine )
 
-Another alternative hardware we could have used to build this application would be, for example a [Leap Motion](https://www.leapmotion.com/). The leap motion is a sensor device that supports hand and finger motions as input, but requires no hand contact or touching. This would have been good to use in our project also, but the myo armband was more practical for what we wanted to achieve.
+##### Leap Motion Controller
+Another alternative hardware we could have used to build this application would be a [Leap Motion](https://www.leapmotion.com/). The Leap Motion Controller works alongside your mouse and keyboard, translating hand and finger movements into a rich array of 3D input. 
+
+The Leap Motion system recognizes and tracks hands, fingers and finger-like tools.The device operates within 60 cm of the user with high precision and tracking framerate – reporting discrete positions, motions, and gesture. This would have been good to use in our project also, but the myo armband was more practical for what we wanted to achieve.
+
+##### Microsoft Kinect v2
+The [Kinect](https://support.xbox.com/en-US/xbox-on-windows/accessories/kinect-for-windows-v2-info) works as a 3D camera by capturing a stream of colored pixels with data about the  depth  of  each  pixel. Each  pixel  in  the  picture  contains  a  value  that  represents  the distance from the sensor to an object in that direction[10]. This hardware featureprovidedevelopers  the  means  for  creating  a  touch-less  and  immersive  user  experience  through voice, movement and gesture control although it does not inherently perform any tracking or recognition operations, leaving all such processing to software.
+
+The Kinect for Windows Software Development Kit (SDK) 2.0 enables developers to create applications that support gesture and voice recognition, using Kinect sensor technology. Kinect API is available in Unity Pro, through a Unity Package. The new cameras provide a wider field of view and feature frames of higher resolution. 
 
 ---
 #### Architecture for the solution

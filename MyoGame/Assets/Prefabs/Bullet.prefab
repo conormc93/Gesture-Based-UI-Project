@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 30
   rigidBody: {fileID: 0}
   powerUp: {fileID: 1057864748530340, guid: 5ccb9ee6470b04743a4b0254c2d11598, type: 2}
+  healthDrop: {fileID: 1039318037012716, guid: 4242339ac2d3bc2458854cc58a5e1dcf, type: 2}
 --- !u!212 &212734987044586706
 SpriteRenderer:
   m_ObjectHideFlags: 1

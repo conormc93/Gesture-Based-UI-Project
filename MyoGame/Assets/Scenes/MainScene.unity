@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 740883319}
   m_Layer: 11
   m_Name: Enemy (6)
-  m_TagString: Enemy
+  m_TagString: HealthDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2363,7 +2363,7 @@ GameObject:
   - component: {fileID: 1158443153}
   m_Layer: 11
   m_Name: Enemy (15)
-  m_TagString: Enemy
+  m_TagString: HealthDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,6 +9,7 @@ public class PlayerBullet : MonoBehaviour {
     public float speed = 30;
     public Rigidbody2D rigidBody;
     public GameObject powerUp;
+    public GameObject healthDrop;
 
 
     // Use this for initialization
@@ -35,6 +36,13 @@ public class PlayerBullet : MonoBehaviour {
             IncreaseScore();
             AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
             Instantiate(powerUp, transform.position, Quaternion.identity);
+        }
+        if (col.tag == "HealthDrop"){
+            Destroy(gameObject);
+            Destroy(col.gameObject, 0.5f);
+            IncreaseScore();
+            AudioManager.audioManager.PlayOneShot(AudioManager.audioManager.enemyDeath);
+            Instantiate(healthDrop, transform.position, Quaternion.identity);
         }
     }
 

@@ -32,6 +32,15 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
+    public void IncreaseHealth(int increase)
+    {
+
+        if (Health < 3)
+        {
+            Health += increase;
+        }
+    }
+
     //Upon "Death" splash screen scene is loaded, effectively restarting the game.
     void Die()
     {

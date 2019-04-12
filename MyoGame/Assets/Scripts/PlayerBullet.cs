@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBullet : MonoBehaviour {
 
@@ -46,7 +47,11 @@ public class PlayerBullet : MonoBehaviour {
         var scoreText = GameObject.Find("Score").GetComponent<Text>();
 
         int score = int.Parse(scoreText.text);
-        score += 10;
+        score += 100;
+        if(score >= 2400)
+        {
+            SceneManager.LoadScene(0);
+        }
 
         scoreText.text = score.ToString();
 

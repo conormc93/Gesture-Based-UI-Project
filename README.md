@@ -105,20 +105,41 @@ The Kinect for Windows Software Development Kit (SDK) 2.0 enables developers to 
 
 ---
 #### Architecture for the solution
+##### Flowchart
 ![architecture](https://i.imgur.com/RhU3QhU.png)
 When deciding how to approach this project collectively we decided to choose to do the project using Microsoft's [Visual Studio](https://www.visualstudio.com/) IDE for [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) and the [MYO Armband](https://www.myo.com/). We chose this as we had been working with both while in class and were familiar with coding in C#.
 
-###### Class Diagram
+##### Class Diagram
 
 
 ---
 
-##### Conclusions & Recommendations
+#### Testing
+
+##### Introduction
+To test the functionality of our game we highlighted critical aspects for running, interacting, and completing it. We wanted to evaluate the integration and performance of our application, therefore allowing us to better manage the project and determine what components or features of the application needed to be retested or redesigned.
+
+##### Scope
+The main focus for our testing process was to indetify and perform any necessary bug fixes to various components and features such as:
+
+- Myo integration with Unity
+- Character controls (using keyboard)
+- Character controls (using gestures)
+- Enemy controls
+- Game rewards
+- Game progression
+- Game navigation
+
+##### Test Plan
+
+
+---
+#### Conclusions & Recommendations
 This latest technology can help us to minimize the reliance on hardware and software for controlling robots and other devices. [Myo Armband](https://www.myo.com/) can easily realize the back screen control computer, in addition to playing computer games, browsing the web, controlling music entertainment and other entertainment activities, and even control the drone. Compared to [Kinect](https://www.xbox.com/en-US/xbox-one/accessories/kinect) and [Leap Motion](https://www.leapmotion.com/?lang=en), the advantage of [Myo](https://www.myo.com/) is that it is not restricted by the specific site and it is more natural to interact. The sensor on the [Myo armband](https://www.myo.com/) is internally equipped with electrodes so that the user can read out the bioelectric activity of the muscle when the user makes a telescopic gesture, thereby determining the intention of the wearer, and then sending the result of the computer processing to the receiver via the low-power **Bluetooth** control equipment. I think that [Siri's voice](https://www.apple.com/ios/siri/) interaction is not perfect for a large number of young people who are accustomed to keyboard input and textual ideograms.
 
 ---
 
-##### References:
+#### References:
 - [Myo Offical](https://www.myo.com/)
 - [Kinect Offical](https://www.xbox.com/en-US/xbox-one/accessories/kinect)
 - [Leap Motion Offical](https://www.leapmotion.com/?lang=en)

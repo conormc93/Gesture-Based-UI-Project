@@ -58,7 +58,7 @@ public class PlayerBullet : MonoBehaviour {
         score += 100;
         if(score >= 2400)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
 
         scoreText.text = score.ToString();

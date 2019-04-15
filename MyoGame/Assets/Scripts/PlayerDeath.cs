@@ -44,6 +44,6 @@ public class PlayerDeath : MonoBehaviour
     //Upon "Death" splash screen scene is loaded, effectively restarting the game.
     void Die()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 }

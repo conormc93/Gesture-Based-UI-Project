@@ -109,7 +109,14 @@ The Kinect for Windows Software Development Kit (SDK) 2.0 enables developers to 
 ![architecture](https://i.imgur.com/RhU3QhU.png)
 When deciding how to approach this project collectively we decided to choose to do the project using Microsoft's [Visual Studio](https://www.visualstudio.com/) IDE for [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)) and the [MYO Armband](https://www.myo.com/). We chose this as we had been working with both while in class and were familiar with coding in C#.
 
-##### Class Diagram
+##### Player Movement
+![movement](https://i.imgur.com/BiS228N.png)
+
+##### Shooting Projectiles
+![shooting](https://i.imgur.com/bcrwCid.png)
+
+##### In game pause menu
+![pause](https://i.imgur.com/u0xposb.png)
 
 
 ---

@@ -131,7 +131,7 @@ The main focus for our testing process was to indetify and perform any necessary
 - Game navigation
 
 ##### Test Plan
-
+![testplan](https://i.imgur.com/pSIUL4U.png)
 
 ---
 #### Conclusions & Recommendations

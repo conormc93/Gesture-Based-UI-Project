@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
         }
         else if(thalmicMyo.pose == Pose.FingersSpread)
         {
-            SceneManager.LoadScene("1");
+            SceneManager.LoadScene(1);
 
             ExtendUnlockAndNotifyUserAction(thalmicMyo);
         }

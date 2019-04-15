@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using LockingPolicy = Thalmic.Myo.LockingPolicy;
+using Pose = Thalmic.Myo.Pose;
+using UnlockType = Thalmic.Myo.UnlockType;
+using VibrationType = Thalmic.Myo.VibrationType;
+
 public class PauseMenu : MonoBehaviour
 {
     //Constants and Variables
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
+    public GameObject myo = null;
 
     // Update is called once per frame
     void Update()
     {
+        ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo>();
+
         //Pausing game with Esc key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -24,6 +32,26 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+
+        if(thalmicMyo.pose == Pose.DoubleTap)
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+
+            ExtendUnlockAndNotifyUserAction(thalmicMyo);
+        }
+        else if(thalmicMyo.pose == Pose.FingersSpread)
+        {
+            SceneManager.LoadScene("1");
+
+            ExtendUnlockAndNotifyUserAction(thalmicMyo);
         }
     }
 
@@ -46,6 +74,18 @@ public class PauseMenu : MonoBehaviour
     //Method which quits the level
     public void QuitGame()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("1");
+    }
+
+    void ExtendUnlockAndNotifyUserAction(ThalmicMyo myo)
+    {
+        ThalmicHub hub = ThalmicHub.instance;
+
+        if (hub.lockingPolicy == LockingPolicy.Standard)
+        {
+            myo.Unlock(UnlockType.Timed);
+        }
+
+        myo.NotifyUserAction();
     }
 }
